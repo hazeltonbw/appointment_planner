@@ -21,5 +21,3 @@ export const AppointmentForm = ({
 
   return AppointmentForm;
 };
-// This is a comment dude.
-//

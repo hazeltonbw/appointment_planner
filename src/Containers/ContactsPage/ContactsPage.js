@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import { ContactForm } from "../../Components/ContactForm/ContactForm";
 import { TileList } from "../../Components/TileList/TileList";
 import PropTypes from "prop-types";
-export const ContactsPage = (props) => {
+
+// props destructuring { contacts, addContact }
+
+export const ContactsPage = ({ contacts, addContact }) => {
   /*
   Define state variables for 
   contact info and duplicate check
@@ -20,7 +23,7 @@ export const ContactsPage = (props) => {
     if the contact name is not a duplicate
     */
     if (!duplicate) {
-      props.addContact(name, phone, email);
+      addContact(name, phone, email);
       setName("");
       setPhone("");
       setEmail("");
@@ -33,7 +36,7 @@ export const ContactsPage = (props) => {
   */
   useEffect(() => {
     const dupe =
-      props.contacts.find((contact) => contact.name === name) === undefined
+      contacts.find((contact) => contact.name === name) === undefined
         ? false
         : true;
     setDuplicate(dupe);
@@ -57,7 +60,7 @@ export const ContactsPage = (props) => {
       <hr />
       <section>
         <h2>Contacts</h2>
-        <TileList />
+        <TileList contacts={contacts} />
       </section>
     </div>
   );
