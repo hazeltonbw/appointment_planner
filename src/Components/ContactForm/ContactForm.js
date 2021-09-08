@@ -1,5 +1,9 @@
 import React from "react";
 
+const duplicateStyle = {
+  border: "2px solid red",
+};
+
 export const ContactForm = ({
   name,
   setName,
@@ -8,18 +12,30 @@ export const ContactForm = ({
   email,
   setEmail,
   handleSubmit,
+  duplicate,
 }) => {
   return (
     <div className="form">
       <form onSubmit={handleSubmit}>
+        <h2
+          style={{
+            display: duplicate ? "block" : "none",
+            color: "red",
+            marginBottom: 0,
+          }}
+        >
+          Duplicate contact found!
+        </h2>
         <input
           type="text"
           name="name"
           placeholder="Name"
           id="Name"
           value={name}
+          style={duplicate ? duplicateStyle : {}}
           onChange={(e) => setName(e.target.value)}
         />
+        <span className="input-error"></span>
         <input
           type="tel"
           name="phone"

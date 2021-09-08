@@ -51,6 +51,7 @@ export const ContactsPage = (props) => {
           setPhone={setPhone}
           setEmail={setEmail}
           handleSubmit={handleSubmit}
+          duplicate={duplicate}
         />
       </section>
       <hr />
