@@ -30,9 +30,6 @@ h2 {
   margin-bottom: 18px;
 }
 
-section {
-}
-
 hr {
   border: none;
   border-top: 1px solid #979797;
@@ -41,17 +38,23 @@ hr {
 
 input[type="submit"] {
   background: #03a8d8;
+  cursor: pointer;
   border-radius: 4px;
   color: #ffffff;
   font-weight: bold;
   font-size: 14px;
-  border: none;
+  border: 1px solid transparent;
   outline: none;
   padding: 10px 0;
   width: 100%;
   font-family: "Open Sans", sans-serif;
   margin-top: 10px;
   margin-bottom: 0px;
+}
+
+input[type="submit"]:active {
+  box-shadow: 0 0 5px #fff;
+  transform: translateY(5%);
 }
 
 input,

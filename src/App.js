@@ -4,7 +4,6 @@ import "./App.css";
 
 import { AppointmentsPage } from "./Containers/AppointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./Containers/ContactsPage/ContactsPage";
-import { TileList } from "../src/Components/TileList/TileList";
 
 function App() {
   const ROUTES = {
@@ -18,12 +17,33 @@ function App() {
   */
 
   const [contacts, setContacts] = useState([]);
-  const [appointments, setAppointments] = useState([]);
 
   /*
   Implement functions to add data to
   contacts and appointments
   */
+  const addContact = (name, phone, email) => {
+    const newContact = {
+      name: name,
+      phone: phone,
+      email: email,
+    };
+
+    setContacts((prev) => [...prev, newContact]);
+  };
+
+  const [appointments, setAppointments] = useState([]);
+
+  const addAppointment = (title, contact, date, time) => {
+    const newAppointment = {
+      title: title,
+      contact: contact,
+      date: date,
+      time: time,
+    };
+
+    setAppointments((prev) => [...prev, newAppointment]);
+  };
 
   return (
     <>
@@ -42,11 +62,15 @@ function App() {
           </Route>
           <Route path={ROUTES.CONTACTS}>
             {/* Add props to ContactsPage */}
-            <ContactsPage />
+            <ContactsPage contacts={contacts} addContact={addContact} />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage />
+            <AppointmentsPage
+              appointments={appointments}
+              addAppointment={addAppointment}
+              contacts={contacts}
+            />
           </Route>
         </Switch>
       </main>
