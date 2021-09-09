@@ -1,6 +1,5 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { Switch, Route, Redirect, NavLink } from "react-router-dom";
-import "./App.css";
 
 import { AppointmentsPage } from "./Containers/AppointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./Containers/ContactsPage/ContactsPage";
