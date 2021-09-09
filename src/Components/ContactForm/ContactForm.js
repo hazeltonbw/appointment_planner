@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const duplicateStyle = {
   border: "2px solid red",
@@ -58,4 +59,15 @@ export const ContactForm = ({
       </form>
     </div>
   );
+};
+
+ContactForm.propTypes = {
+  name: PropTypes.string.isRequired,
+  setName: PropTypes.func.isRequired,
+  phone: PropTypes.string.isRequired,
+  setPhone: PropTypes.func.isRequired,
+  email: PropTypes.string.isRequired,
+  setEmail: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  duplicate: PropTypes.bool.isRequired,
 };

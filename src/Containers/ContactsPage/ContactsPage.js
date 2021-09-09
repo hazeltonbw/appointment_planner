@@ -40,7 +40,7 @@ export const ContactsPage = ({ contacts, addContact }) => {
         ? false
         : true;
     setDuplicate(dupe);
-  }, [name]);
+  }, [name, contacts]);
 
   return (
     <div>
@@ -60,7 +60,7 @@ export const ContactsPage = ({ contacts, addContact }) => {
       <hr />
       <section>
         <h2>Contacts</h2>
-        <TileList contacts={contacts} />
+        <TileList inst="Contact" tiles={contacts} />
       </section>
     </div>
   );

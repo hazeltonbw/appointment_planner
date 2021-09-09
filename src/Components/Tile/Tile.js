@@ -1,13 +1,18 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const Tile = ({ contact }) => {
+export const Tile = ({ tile }) => {
   return (
     <div className="tile-container">
-      <div className="tile">
-        <div className="tile tile-title">{contact.name}</div>
-        <p>Phone Number: {contact.phone} </p>
-        <p>Email: {contact.email} </p>
-      </div>
+      {
+        Object.values(tile).map((key, i) => {
+          return <p className={!i ? "tile tile-title" : "tile"}>{key}</p>
+        })
+      }
     </div>
-  );
+  )
+};
+
+Tile.propTypes = {
+  tile: PropTypes.object.isRequired,
 };

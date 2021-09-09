@@ -75,12 +75,9 @@ select {
   font-size: 14px;
   margin-bottom: 4px;
 }
-.tile p {
-  color: #597387;
-}
+
 .tile.tile-title {
   font-weight: bold;
-  color: white;
 }
 
 .tile-container {
